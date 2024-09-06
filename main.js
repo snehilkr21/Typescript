@@ -1,2 +1,2 @@
-var message = "Hello World";
-console.log(message);
+var isBeginner = true;
+console.log(isBeginner);
