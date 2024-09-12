@@ -1,4 +1,6 @@
-let greeting : string = "Hello Snehil";
-console.log(greeting)
+function addSum(num : number){
+    return num+2;
+}
+addSum(5);
 
 export {}
