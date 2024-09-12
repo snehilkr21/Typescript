@@ -1,3 +1,2 @@
-var user = { name: "snehil", age: 10 };
-console.log(user);
-console.log("snehil");
+var greeting = "Hello Snehil";
+console.log(greeting);

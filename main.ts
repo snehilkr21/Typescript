@@ -1,3 +1,4 @@
-let user = { name : "snehil" , age : 10}
-console.log(user)
-console.log("snehil")
+let greeting : string = "Hello Snehil";
+console.log(greeting)
+
+export {}
