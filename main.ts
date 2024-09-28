@@ -1,6 +1,12 @@
-let a;
-a=10;
-a="snehil"
-a=false
-console.log(a)
+let hero : string
+
+
+function getHero(){
+    return false;
+}
+
+
+
+
+hero=getHero()
 export {}
