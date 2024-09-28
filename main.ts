@@ -1,12 +1,6 @@
-let hero : string
-
-
-function getHero(){
-    return false;
+function addTwo(num:number):number{
+    return 2+num;
 }
+addTwo(5);
 
-
-
-
-hero=getHero()
 export {}
