@@ -1,4 +1,6 @@
-let greeting : string = "hello snehil"
-console.log(greeting)
-
+let a;
+a=10;
+a="snehil"
+a=false
+console.log(a)
 export {}
