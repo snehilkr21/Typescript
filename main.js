@@ -1,5 +1,4 @@
-function addSum(num) {
-    num.toUpperCase();
-    return num + 2;
-}
-addSum(5);
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var greeting = "hello snehil";
+console.log(greeting);
