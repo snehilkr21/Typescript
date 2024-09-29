@@ -1,6 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var arr = [1, false, "3"];
-arr.map(function (a) {
-    return "1";
-});
+function isCheck(_a) {
+    var amount = _a.amount, isPaid = _a.isPaid;
+    return { amount: 1000, isPaid: false };
+}
+var data = isCheck({ amount: 1000, isPaid: false });
+console.log(data);
