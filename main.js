@@ -8,5 +8,5 @@ var myUser = {
     arrData: [1, 2, 3]
 };
 myUser.name = "ravi";
-myUser.arrData.push(10);
-console.log("myUser ", myUser);
+myUser.arrData.push(10); // Error: Property 'push' does not exist on type 'readonly number[]'
+console.log("myUser", myUser);
