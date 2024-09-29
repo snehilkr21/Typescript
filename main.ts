@@ -1,2 +1,6 @@
-const signUpUser = (email :  string, password : string, isPaid : boolean = false) : boolean =>{return true}
-signUpUser("h@g.com","abc");
+const arr = [1,false,"3"]
+
+
+arr.map(a=>{
+    return a
+})
