@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 function createuser(user) {
-    console.log("user", user);
+    return { email: "", name: "", isActive: true };
 }
-createuser({ email: "", name: "", isActive: false });
+var data = createuser({ email: "", name: "", isActive: false });
+console.log("data", data);

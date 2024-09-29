@@ -3,9 +3,10 @@ type User = {
     email : string;
     isActive : boolean
 }
-function createuser(user:User){
-  console.log("user",user)
+function createuser(user:User):User{
+  return {email:"",name:"",isActive:true}
 }
-createuser({email:"",name:"",isActive:false})
+let data = createuser({email:"",name:"",isActive:false})
+console.log("data",data)
 
 export {}
