@@ -1,12 +1,17 @@
 type User = {
+    readonly _id : string;
     name : string;
     email : string;
     isActive : boolean
 }
-function createuser(user:User):User{
-  return {email:"",name:"",isActive:true}
+
+let myUser : User = {
+    _id : "123",
+    name : "snehil",
+    email : "h@gmail.com",
+    isActive : false
 }
-let data = createuser({email:"",name:"",isActive:false})
-console.log("data",data)
+myUser.name ="ravi"
+console.log("myUser ",myUser)
 
 export {}

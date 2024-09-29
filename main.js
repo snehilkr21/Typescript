@@ -1,7 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-function createuser(user) {
-    return { email: "", name: "", isActive: true };
-}
-var data = createuser({ email: "", name: "", isActive: false });
-console.log("data", data);
+var myUser = {
+    _id: "123",
+    name: "snehil",
+    email: "h@gmail.com",
+    isActive: false
+};
+myUser.name = "ravi";
+console.log("myUser ", myUser);
