@@ -1,6 +1,2 @@
-function addTwo(num:number):number{
-    return 2+num;
-}
-addTwo(5);
-
-export {}
+function signUpUser(email :  string, password : string, isPaid : boolean = false){}
+signUpUser("h@g.com","abc");
