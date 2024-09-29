@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-function isCheck(obj) {
+var check = function (obj) {
     console.log("obj ", obj);
-    return { amount: 1000, isPaid: false };
-}
-var data = isCheck({ amount: 1000, isPaid: false });
-console.log(data);
+    return { name: "snehil", amount: 1000 };
+};
+var data = check({ name: "snehil", isPaid: false });
+console.log("data ", data);

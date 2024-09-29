@@ -1,7 +1,9 @@
-function isCheck(obj: { amount: number; isPaid: boolean }) : { amount: number; isPaid: boolean } {
+const check = (obj : {name : string , isPaid : boolean}) : {name : string , amount : number} =>{
     console.log("obj ",obj)
-    return {amount : 1000, isPaid : false}
+    return {name : "snehil" , amount : 1000}
+
 }
-let data = isCheck({amount : 1000, isPaid : false})
-console.log(data)
+let data = check({name : "snehil", isPaid : false})
+console.log("data ",data)
+
 export {}
