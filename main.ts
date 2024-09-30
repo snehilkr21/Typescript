@@ -1,24 +1,20 @@
-type Person = {
+type HasName = {
     name: string;
-    age: number;
 };
 
-type Employee = {
-    employeeId: string;
-    department: string;
+type GreetFunction = {
+    greet: () => string;
 };
 
-// Intersection type: an object must have properties from both Person and Employee
-type EmployeePerson = Person & Employee;
+// Intersection type: must have both 'name' property and 'greet' method
+type NamedGreeter = HasName & GreetFunction;
 
-let employee: EmployeePerson = {
+let greeter: NamedGreeter = {
     name: "Snehil",
-    age: 25,
-    employeeId: "E123",
-    department: "Engineering"
+    greet: () => "Hello!"
 };
 
-console.log(employee);
-
+console.log(greeter.name);
+console.log(greeter.greet());
 
 export {}

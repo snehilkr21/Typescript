@@ -1,9 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var employee = {
+var greeter = {
     name: "Snehil",
-    age: 25,
-    employeeId: "E123",
-    department: "Engineering"
+    greet: function () { return "Hello!"; }
 };
-console.log(employee);
+console.log(greeter.name);
+console.log(greeter.greet());
