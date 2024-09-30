@@ -1,15 +1,24 @@
-function printUserInfo(user: { name: string; email?: string }) {
-    console.log(`Name: ${user.name}`);
+type Person = {
+    name: string;
+    age: number;
+};
 
-    // Check if 'email' exists before using it
-    if (user.email) {
-        console.log(`Email: ${user.email}`);
-    } else {
-        console.log('Email not provided');
-    }
-}
+type Employee = {
+    employeeId: string;
+    department: string;
+};
 
-printUserInfo({ name: "Snehil" });          // No email provided
-printUserInfo({ name: "Ravi", email: "ravi@gmail.com" });  // Email provided
+// Intersection type: an object must have properties from both Person and Employee
+type EmployeePerson = Person & Employee;
+
+let employee: EmployeePerson = {
+    name: "Snehil",
+    age: 25,
+    employeeId: "E123",
+    department: "Engineering"
+};
+
+console.log(employee);
+
 
 export {}
