@@ -1,7 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var id;
-id = 123; // OK: 'id' is a number
-id = "ABC"; // OK: 'id' is a string
-// id = true;  // Error: 'id' can only be a string or number
-console.log(id);
+function makeSound(animal) {
+    if ("bark" in animal) {
+        animal.bark(); // TypeScript knows this must be a Dog
+    }
+    else {
+        animal.meow(); // TypeScript knows this must be a Cat
+    }
+}
+var myDog = { breed: "Labrador", bark: function () { return console.log("Woof!"); } };
+var myCat = { breed: "Persian", meow: function () { return console.log("Meow!"); } };
+makeSound(myDog); // Output: Woof!
+makeSound(myCat); // Output: Meow!
