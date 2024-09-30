@@ -1,20 +1,8 @@
-type HasName = {
-    name: string;
-};
+let id: string | number;
 
-type GreetFunction = {
-    greet: () => string;
-};
-
-// Intersection type: must have both 'name' property and 'greet' method
-type NamedGreeter = HasName & GreetFunction;
-
-let greeter: NamedGreeter = {
-    name: "Snehil",
-    greet: () => "Hello!"
-};
-
-console.log(greeter.name);
-console.log(greeter.greet());
+id = 123;      // OK: 'id' is a number
+id = "ABC";    // OK: 'id' is a string
+// id = true;  // Error: 'id' can only be a string or number
+console.log(id)
 
 export {}
