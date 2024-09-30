@@ -1,13 +1,7 @@
-function printId(id: string | number) {
-    // Type narrowing to handle both cases
-    if (typeof id === "string") {
-        console.log(id.toLowerCase()); // Now TypeScript knows 'id' is a string
-    } else {
-        console.log(id); // 'id' is a number here
-    }
-}
+ let data1 : number[] = [1,2,3] // it suggest that it can store only number
+ let data2 : string[] = ["1","2","3"] // it reflect that it can only store the string
+ let data3 : string[] | number[] = [1,2,3] //it either store the number or string
+ let data4 : (string | number) [] = [1,2,"3"] // it store both number and string
 
-printId(123);         // Outputs: 123
-printId("ABC");       // Outputs: abc (after converting to lowercase)
 
 export {};
