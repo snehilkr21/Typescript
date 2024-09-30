@@ -1,26 +1,13 @@
-type Dog = {
-    breed: string;
-    bark: () => void;
-};
-
-type Cat = {
-    breed: string;
-    meow: () => void;
-};
-
-function makeSound(animal: Dog | Cat) {
-    if ("bark" in animal) {
-        animal.bark();   // TypeScript knows this must be a Dog
+function printId(id: string | number) {
+    // Type narrowing to handle both cases
+    if (typeof id === "string") {
+        console.log(id.toLowerCase()); // Now TypeScript knows 'id' is a string
     } else {
-        animal.meow();   // TypeScript knows this must be a Cat
+        console.log(id); // 'id' is a number here
     }
 }
 
-let myDog: Dog = { breed: "Labrador", bark: () => console.log("Woof!") };
-let myCat: Cat = { breed: "Persian", meow: () => console.log("Meow!") };
+printId(123);         // Outputs: 123
+printId("ABC");       // Outputs: abc (after converting to lowercase)
 
-makeSound(myDog);   // Output: Woof!
-makeSound(myCat);   // Output: Meow!
-
-
-export {}
+export {};
