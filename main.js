@@ -1,14 +1,21 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var User = /** @class */ (function () {
-    function User(password) {
+    function User(id, name, password, email) {
+        this.id = id;
+        this.name = name;
         this.password = password;
+        this.email = email;
+        this.id = id;
+        this.name = name;
+        this.password = password;
+        this.email = email;
     }
-    User.prototype.displayPassword = function () {
-        console.log("Password: ".concat(this.password));
+    // Corrected the 'print' method, now it's a regular method
+    User.prototype.print = function () {
+        console.log("User: ".concat(this.name, ", Email: ").concat(this.email, ", id : ").concat(this.id, ", Password : ").concat(this.password));
     };
     return User;
 }());
-var user = new User("secret123");
-console.log(user.password); // Error: Cannot access private property
-user.displayPassword(); // Error: Cannot access private method
+var user = new User(123, "Snehil", "secret123", "snehil@example.com");
+user.print();
