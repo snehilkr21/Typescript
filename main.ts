@@ -1,18 +1,19 @@
 abstract class Animal {
-    abstract name: string; 
+    protected name: string; // Protected property to hold the name
 
-    abstract makeSound(): void;
+    constructor(name: string) {
+        this.name = name; // Initialize the name in the constructor
+    }
+
+    abstract makeSound(): void; // Abstract method
 
     move(): void {
-        console.log(`${this.name} is moving...`);
+        console.log(`${this.name} is moving...`); // Using the name property
     }
 }
 class Dog extends Animal {
-    name: string;
-
     constructor(name: string) {
-        super();
-        this.name = name; // Setting the value of the abstract property
+        super(name); // Call the constructor of the abstract class
     }
 
     makeSound(): void {
@@ -20,11 +21,8 @@ class Dog extends Animal {
     }
 }
 class Cat extends Animal {
-    name: string;
-
     constructor(name: string) {
-        super();
-        this.name = name; // Setting the value of the abstract property
+        super(name); // Call the constructor of the abstract class
     }
 
     makeSound(): void {
@@ -32,12 +30,14 @@ class Cat extends Animal {
     }
 }
 
+// Creating instances of subclasses
 const dog = new Dog("Buddy");
+const cat = new Cat("Whiskers");
+
 dog.makeSound(); // Output: Woof!
 dog.move();      // Output: Buddy is moving...
-
-const cat = new Cat("Whiskers");
 cat.makeSound(); // Output: Meow!
 cat.move();      // Output: Whiskers is moving...
+
 
 export {}

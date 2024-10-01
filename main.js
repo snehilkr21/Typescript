@@ -1,3 +1,4 @@
+"use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -13,13 +14,14 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+Object.defineProperty(exports, "__esModule", { value: true });
 // Define an abstract class
 var Animal = /** @class */ (function () {
-    function Animal() {
+    function Animal(name) {
+        this.name = name; // Initialize the name in the constructor
     }
-    // Concrete method
     Animal.prototype.move = function () {
-        console.log("".concat(this.name, " is moving..."));
+        console.log("".concat(this.name, " is moving...")); // Using the name property
     };
     return Animal;
 }());
@@ -27,11 +29,8 @@ var Animal = /** @class */ (function () {
 var Dog = /** @class */ (function (_super) {
     __extends(Dog, _super);
     function Dog(name) {
-        var _this = _super.call(this) || this;
-        _this.name = name; // Setting the value of the abstract property
-        return _this;
+        return _super.call(this, name) || this; // Call the constructor of the abstract class
     }
-    // Providing implementation for the abstract method
     Dog.prototype.makeSound = function () {
         console.log("Woof!");
     };
@@ -41,19 +40,17 @@ var Dog = /** @class */ (function (_super) {
 var Cat = /** @class */ (function (_super) {
     __extends(Cat, _super);
     function Cat(name) {
-        var _this = _super.call(this) || this;
-        _this.name = name; // Setting the value of the abstract property
-        return _this;
+        return _super.call(this, name) || this; // Call the constructor of the abstract class
     }
-    // Providing implementation for the abstract method
     Cat.prototype.makeSound = function () {
         console.log("Meow!");
     };
     return Cat;
 }(Animal));
+// Creating instances of subclasses
 var dog = new Dog("Buddy");
+var cat = new Cat("Whiskers");
 dog.makeSound(); // Output: Woof!
 dog.move(); // Output: Buddy is moving...
-var cat = new Cat("Whiskers");
 cat.makeSound(); // Output: Meow!
 cat.move(); // Output: Whiskers is moving...
