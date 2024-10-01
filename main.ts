@@ -1,39 +1,43 @@
-// Define an abstract class
 abstract class Animal {
-    // Abstract method
+    abstract name: string; 
+
     abstract makeSound(): void;
 
-    // Concrete method
     move(): void {
-        console.log("Moving...");
+        console.log(`${this.name} is moving...`);
     }
 }
-
-// Subclass extending the abstract class
 class Dog extends Animal {
-    // Providing implementation for the abstract method
+    name: string;
+
+    constructor(name: string) {
+        super();
+        this.name = name; // Setting the value of the abstract property
+    }
+
     makeSound(): void {
         console.log("Woof!");
     }
 }
-
-// Subclass extending the abstract class
 class Cat extends Animal {
-    // Providing implementation for the abstract method
+    name: string;
+
+    constructor(name: string) {
+        super();
+        this.name = name; // Setting the value of the abstract property
+    }
+
     makeSound(): void {
         console.log("Meow!");
     }
 }
 
-// Cannot create an instance of Animal
-// const animal = new Animal(); // Error: Cannot create an instance of an abstract class
-
-const dog = new Dog();
+const dog = new Dog("Buddy");
 dog.makeSound(); // Output: Woof!
-dog.move();      // Output: Moving...
+dog.move();      // Output: Buddy is moving...
 
-const cat = new Cat();
+const cat = new Cat("Whiskers");
 cat.makeSound(); // Output: Meow!
-cat.move();      // Output: Moving...
+cat.move();      // Output: Whiskers is moving...
 
 export {}
