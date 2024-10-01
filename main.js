@@ -6,6 +6,10 @@ var newUser = {
     userId: 55,
     startTrail: function () {
         return "snehil";
+    },
+    cupon: function (cuponName) {
+        return true;
     }
 };
+console.log(newUser.cupon("snehil"));
 console.log(newUser);
