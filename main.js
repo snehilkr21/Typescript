@@ -15,28 +15,27 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-// Define an abstract class
 var Animal = /** @class */ (function () {
     function Animal(name) {
         this.name = name; // Initialize the name in the constructor
     }
+    Animal.prototype.getName = function () { return this.name; }; // Allows subclasses to access the private property
     Animal.prototype.move = function () {
-        console.log("".concat(this.name, " is moving...")); // Using the name property
+        console.log("".concat(this.getName(), " is moving...")); // Use the getter to access the name
     };
     return Animal;
 }());
-// Subclass extending the abstract class
 var Dog = /** @class */ (function (_super) {
     __extends(Dog, _super);
     function Dog(name) {
         return _super.call(this, name) || this; // Call the constructor of the abstract class
     }
-    Dog.prototype.makeSound = function () {
-        console.log("Woof!");
+    Dog.prototype.makeSound = function () { console.log("Woof!"); };
+    Dog.prototype.printName = function () {
+        console.log("Dog's name is: ".concat(this.getName())); // Calling getName() directly
     };
     return Dog;
 }(Animal));
-// Subclass extending the abstract class
 var Cat = /** @class */ (function (_super) {
     __extends(Cat, _super);
     function Cat(name) {
@@ -45,12 +44,16 @@ var Cat = /** @class */ (function (_super) {
     Cat.prototype.makeSound = function () {
         console.log("Meow!");
     };
+    Cat.prototype.printName = function () {
+        console.log("Cat's name is: ".concat(this.getName())); // Calling getName() directly
+    };
     return Cat;
 }(Animal));
-// Creating instances of subclasses
 var dog = new Dog("Buddy");
 var cat = new Cat("Whiskers");
 dog.makeSound(); // Output: Woof!
 dog.move(); // Output: Buddy is moving...
+dog.printName(); // Output: Dog's name is: Buddy
 cat.makeSound(); // Output: Meow!
 cat.move(); // Output: Whiskers is moving...
+cat.printName(); // Output: Cat's name is: Whiskers
