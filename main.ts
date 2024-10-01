@@ -1,18 +1,19 @@
 class User {
-    public name: string;
+    private password: string;
   
-    constructor(name: string) {
-      this.name = name;
+    constructor(password: string) {
+      this.password = password;
     }
   
-    public greet() {
-      console.log(`Hello, ${this.name}`);
+    private displayPassword() {
+      console.log(`Password: ${this.password}`);
     }
   }
   
-  const user = new User("Snehil");
-  console.log(user.name);  
-  user.greet();            
+  const user = new User("secret123");
+  // console.log(user.password);  // Error: Cannot access private property
+  // user.displayPassword();      // Error: Cannot access private method
+            
   
   
   export {};
