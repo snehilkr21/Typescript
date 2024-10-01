@@ -15,39 +15,45 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var Person = /** @class */ (function () {
-    function Person(name, email) {
-        this.name = name; // Initialize name in the constructor
-        this.email = email; // Initialize email in the constructor
+// Define an abstract class
+var Animal = /** @class */ (function () {
+    function Animal() {
     }
-    Person.prototype.greet = function () {
-        console.log("Hello, my name is ".concat(this.name, " and my email is ").concat(this.email));
+    // Concrete method
+    Animal.prototype.move = function () {
+        console.log("Moving...");
     };
-    return Person;
+    return Animal;
 }());
-var Employee = /** @class */ (function (_super) {
-    __extends(Employee, _super);
-    function Employee(name, email, position) {
-        var _this = _super.call(this, name, email) || this; // Calling the parent constructor with both name and email
-        _this.position = position;
-        return _this;
+// Subclass extending the abstract class
+var Dog = /** @class */ (function (_super) {
+    __extends(Dog, _super);
+    function Dog() {
+        return _super !== null && _super.apply(this, arguments) || this;
     }
-    Employee.prototype.introduce = function () {
-        console.log("I am ".concat(this.name, ", and I work as a ").concat(this.position, "."));
-        this.greet(); // Calling the inherited public method
+    // Providing implementation for the abstract method
+    Dog.prototype.makeSound = function () {
+        console.log("Woof!");
     };
-    Employee.prototype.showEmail = function () {
-        console.log("My email is ".concat(this.email)); // Accessing protected email property
+    return Dog;
+}(Animal));
+// Subclass extending the abstract class
+var Cat = /** @class */ (function (_super) {
+    __extends(Cat, _super);
+    function Cat() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    // Providing implementation for the abstract method
+    Cat.prototype.makeSound = function () {
+        console.log("Meow!");
     };
-    return Employee;
-}(Person));
-var emp = new Employee("John", "john@example.com", "Developer");
-emp.introduce(); // Works, can access public members directly
-// Directly accessing public properties
-console.log(emp.name); // Output: John
-// Error: Property 'email' is protected and only accessible within class 'Person' and its subclasses
-// console.log(emp.email); // Uncommenting this line will cause an error
-// Using a method in the subclass to access the protected email
-emp.showEmail(); // Output: My email is john@example.com
-// Directly calling the public method
-emp.greet(); // Output: Hello, my name is John and my email is john@example.com
+    return Cat;
+}(Animal));
+// Cannot create an instance of Animal
+// const animal = new Animal(); // Error: Cannot create an instance of an abstract class
+var dog = new Dog();
+dog.makeSound(); // Output: Woof!
+dog.move(); // Output: Moving...
+var cat = new Cat();
+cat.makeSound(); // Output: Meow!
+cat.move(); // Output: Moving...
