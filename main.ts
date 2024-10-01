@@ -13,12 +13,13 @@ interface User {
     startTrail: () => {
       return "snehil";
     },
-    cupon: (cuponName: string) => {  
+    cupon: (cuponName="snehil") => {  
+      console.log("cuponName " ,cuponName)
       return true;
     }
   };
 
-  console.log(newUser.cupon("snehil"))
+  console.log(newUser.cupon(""))
   console.log(newUser);
   
   export {};

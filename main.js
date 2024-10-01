@@ -8,8 +8,10 @@ var newUser = {
         return "snehil";
     },
     cupon: function (cuponName) {
+        if (cuponName === void 0) { cuponName = "snehil"; }
+        console.log("cuponName ", cuponName);
         return true;
     }
 };
-console.log(newUser.cupon("snehil"));
+console.log(newUser.cupon(""));
 console.log(newUser);
