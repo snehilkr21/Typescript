@@ -47,4 +47,10 @@ const ProductList3 = <Type> (product : Type[]) : Type => {
 } 
 console.log(ProductList3([1,2,3]))
 
+
+//Example 4
+const ProductList4 = <Type> (product : Type[]) : number => {
+    return 0
+} 
+console.log(ProductList4([1,2,3]))
 export {}

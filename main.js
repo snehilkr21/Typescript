@@ -35,3 +35,8 @@ var ProductList3 = function (product) {
     return product[0];
 };
 console.log(ProductList3([1, 2, 3]));
+//Example 4
+var ProductList4 = function (product) {
+    return 0;
+};
+console.log(ProductList4([1, 2, 3]));
