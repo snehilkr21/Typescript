@@ -1,21 +1,29 @@
-interface Database {
-    username: string;
-    password: string;
+class Box<T> {
+    private content: T;
+
+    constructor(value: T) {
+        this.content = value;
+    }
+
+    getContent(): T {
+        return this.content;
+    }
+
+    setContent(value: T): void {
+        this.content = value;
+    }
 }
 
-function anotherFunction<T, U extends keyof Database>(val1: T, val2: U, obj: Database): object {
-    const propertyValue = obj[val2];  // val2 will be either 'username' or 'password'
-    return {
-        val1,
-        key: val2,          // the key name (either 'username' or 'password')
-        value: propertyValue // the value associated with the key
-    };
-}
+const numberBox = new Box<number>(123);
+console.log(numberBox.getContent());  
 
-const db: Database = { username: "snehil", password: "mypassword" };
+const stringBox = new Box<string>("Hello, World!");
+console.log(stringBox.getContent());  
 
-console.log(anotherFunction(3, "username", db)); 
+const objectBox = new Box<{ name: string }>({ name: "Snehil" });
+console.log(objectBox.getContent());  
 
-console.log(anotherFunction(5, "password", db)); 
+stringBox.setContent("Updated!");
+console.log(stringBox.getContent()); 
 
- export {}
+export {}

@@ -1,13 +1,29 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-function anotherFunction(val1, val2, obj) {
-    var propertyValue = obj[val2]; // val2 will be either 'username' or 'password'
-    return {
-        val1: val1,
-        key: val2, // the key name (either 'username' or 'password')
-        value: propertyValue // the value associated with the key
+var Box = /** @class */ (function () {
+    function Box(value) {
+        this.content = value;
+    }
+    // Method to get the content
+    Box.prototype.getContent = function () {
+        return this.content;
     };
-}
-var db = { username: "snehil", password: "mypassword" };
-console.log(anotherFunction(3, "username", db));
-console.log(anotherFunction(5, "password", db));
+    // Method to update the content
+    Box.prototype.setContent = function (value) {
+        this.content = value;
+    };
+    return Box;
+}());
+// Creating instances of the generic class with different types
+// Box containing a number
+var numberBox = new Box(123);
+console.log(numberBox.getContent()); // Output: 123
+// Box containing a string
+var stringBox = new Box("Hello, World!");
+console.log(stringBox.getContent()); // Output: "Hello, World!"
+// Box containing an object
+var objectBox = new Box({ name: "Snehil" });
+console.log(objectBox.getContent()); // Output: { name: "Snehil" }
+// Changing the content of the stringBox
+stringBox.setContent("Updated!");
+console.log(stringBox.getContent()); // Output: "Updated!"
