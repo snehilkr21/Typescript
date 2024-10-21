@@ -1,29 +1,9 @@
-class Box<T> {
-    private content: T;
-
-    constructor(value: T) {
-        this.content = value;
+function defectType(val:string|number|number[]){
+    if(val==='string'){
+        return val.charAt(1)
+    }else if(val==='object'){
+        return val[0]
     }
-
-    getContent(): T {
-        return this.content;
-    }
-
-    setContent(value: T): void {
-        this.content = value;
-    }
+    return val.toString()
 }
-
-const numberBox = new Box<number>(123);
-console.log(numberBox.getContent());  
-
-const stringBox = new Box<string>("Hello, World!");
-console.log(stringBox.getContent());  
-
-const objectBox = new Box<{ name: string }>({ name: "Snehil" });
-console.log(objectBox.getContent());  
-
-stringBox.setContent("Updated!");
-console.log(stringBox.getContent()); 
-
-export {}
+console.log(defectType([10]))
